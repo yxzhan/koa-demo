@@ -1,0 +1,20 @@
+{
+  "name": "newssnake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node-dev index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crawler": "^1.0.4",
+    "koa": "^2.2.0",
+    "koa-logger": "^2.0.1",
+    "koa-route": "^3.2.0"
+  },
+  "devDependencies": {
+    "node-dev": "^3.1.3"
+  }
+}
