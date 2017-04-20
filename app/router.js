@@ -1,5 +1,8 @@
 const Router = require('koa-router')
-const parse = require('co-body')
+const sleep = require('./util.js')['sleep']
+const writeFile = require('./util.js')['writeFile']
+const getNews = require('./crawler.js')
+
 const router = new Router()
 
 router.get('/', showRoot);
@@ -10,9 +13,9 @@ function showRoot(ctx) {
 }
 
 async function crawlnews (ctx, next) {
-  ctx.body = 'get something new'
-  setTimeout(() => {conosle.log('hehhe')})
-  await next()
+  writeFile('request.json', ctx)
+  const newsList = await getNews('bbc', 'http://feeds.bbci.co.uk/news/rss.xml')
+  ctx.body = newsList
 }
 
 module.exports = router

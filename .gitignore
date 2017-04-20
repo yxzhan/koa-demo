@@ -53,3 +53,5 @@ doc/~$**
 private
 backend
 *.tgz
+news/
+tmp/
