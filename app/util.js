@@ -1,4 +1,5 @@
 const fs = require('fs')
+const jsonfile = require('jsonfile')
 const path = require('path')
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
   writeFile (name, data) {
     const fileName = path.resolve('tmp/', name)
     const str = JSON.stringify(data)
-    fs.writeFile(fileName, str, function (err) {
+    jsonfile.writeFile(fileName, data, function (err) {
       if (err) return console.log(err)
       console.log('File ' + name + ' saved!')
     })
